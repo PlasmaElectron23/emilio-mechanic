@@ -8,15 +8,12 @@
 }
 
 :root {
-  /* The "Mechanic" Palette */
-  --red: #D32F2F;        /* Racing Red */
-  --red-hover: #B71C1C;
-  --dark-gray: #1A1A1A;  /* Oil Gray */
-  --medium-gray: #333333;
-  --steel: #E0E0E0;      /* Steel Gray */
+  --primary-green: #2E7D32;    
+  --green-hover: #1B5E20;
+  --black: #000000;            
+  --dark-gray: #121212;        
+  --steel: #BDBDBD;            
   --white: #FFFFFF;
-  --text-main: #1A1A1A;
-  --text-muted: #666666;
 }
 
 html { 
@@ -26,8 +23,8 @@ html {
 
 body { 
   font-family: 'DM Sans', sans-serif; 
-  background: var(--white); 
-  color: var(--text-main); 
+  background: var(--black); 
+  color: var(--white); 
   overflow-x: hidden; 
   line-height: 1.6;
   display: flex;
@@ -36,65 +33,74 @@ body {
 }
 
 /* ==========================================================================
-   2. NAVIGATION (Clean & Bold)
+   2. NAVIGATION
    ========================================================================== */
 nav {
   position: sticky; 
   top: 0; 
   z-index: 100; 
-  background: var(--white);
-  border-bottom: 3px solid var(--red); 
+  background: var(--black);
+  border-bottom: 4px solid var(--primary-green); 
   display: flex; 
   align-items: center;
   justify-content: space-between; 
   padding: 0 3rem; 
-  height: 85px; 
+  height: 90px; 
 }
 
 .nav-logo { 
-  font-family: 'Outfit', sans-serif; 
-  font-size: 26px; 
-  font-weight: 800; 
-  color: var(--dark-gray); 
+  font-family: 'Syncopate', sans-serif; 
+  font-size: 15px; 
+  font-weight: 700; 
+  color: var(--white); 
   text-transform: uppercase;
-  letter-spacing: -1px;
+  letter-spacing: 1px;
+  line-height: 1.2;
 }
 
-.nav-logo span { color: var(--red); }
+.nav-logo span { 
+  display: block;
+  color: var(--primary-green); 
+  font-size: 11px;
+}
 
 .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
 .nav-links a { 
-  font-size: 14px; 
+  font-size: 13px; 
   font-weight: 700; 
-  color: var(--dark-gray); 
+  color: var(--white); 
   text-decoration: none; 
   text-transform: uppercase;
 }
 
 .nav-cta { 
-  background: var(--red); 
+  background: var(--primary-green); 
   color: var(--white) !important; 
   padding: 12px 24px; 
-  border-radius: 4px; 
-  transition: background 0.3s;
+  border-radius: 2px; 
+  transition: all 0.3s ease;
   text-decoration: none;
   font-weight: 700;
   display: inline-block;
+  text-transform: uppercase;
 }
 
-.nav-cta:hover { background: var(--red-hover); }
+.nav-cta:hover { 
+  background: var(--green-hover); 
+  transform: translateY(-2px);
+}
 
 /* ==========================================================================
-   3. HERO SECTION (Industrial look)
+   3. HERO SECTION
    ========================================================================== */
 .hero {
   position: relative; 
-  min-height: 650px;
+  min-height: 700px;
   display: flex;
   align-items: center; 
   justify-content: center;
   padding: 4rem 3rem; 
-  background-color: var(--dark-gray);
+  background-color: var(--black);
 }
 
 .hero-bg {
@@ -103,11 +109,12 @@ nav {
   background-image: url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1400&q=80');
   background-size: cover; 
   background-position: center;
+  opacity: 0.4;
 }
 
 .hero-bg::after {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(circle, rgba(0,0,0,0.5) 0%, rgba(0,0,0,1) 100%);
 }
 
 .hero-container {
@@ -115,130 +122,86 @@ nav {
   z-index: 2;
   width: 100%;
   max-width: 1200px; 
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 4rem;
-  align-items: center;
+  text-align: center;
 }
 
 .hero-title { 
-  font-family: 'Outfit', sans-serif; 
-  font-size: clamp(40px, 6vw, 72px); 
-  font-weight: 800; 
-  line-height: 1; 
+  font-family: 'Syncopate', sans-serif; 
+  font-size: clamp(30px, 5vw, 60px); 
+  font-weight: 700; 
+  line-height: 1.1; 
   color: var(--white); 
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
 }
 
-.hero-title span { color: var(--red); }
+.hero-title span { 
+    display: block;
+    color: var(--primary-green); 
+    margin-top: 10px;
+}
 
 .hero-sub { 
-  font-size: 20px; 
+  font-size: 18px; 
   color: var(--steel); 
-  margin-bottom: 2.5rem; 
-  max-width: 520px;
-  border-left: 4px solid var(--red);
-  padding-left: 20px;
+  margin: 0 auto 2.5rem auto; 
+  max-width: 750px;
 }
 
 /* ==========================================================================
    4. STATS CARDS
    ========================================================================== */
 .hero-stats { 
-  display: grid; 
-  grid-template-columns: 1fr; 
-  gap: 1.5rem; 
+  display: flex; 
+  justify-content: center;
+  gap: 2rem; 
+  flex-wrap: wrap;
+  margin-top: 3rem;
 }
 
 .stat-card { 
-  background: rgba(255, 255, 255, 0.1); 
-  border: 1px solid rgba(255, 255, 255, 0.2); 
-  border-left: 6px solid var(--red); 
-  border-radius: 4px; 
-  padding: 1.5rem 2rem; 
+  background: rgba(18, 18, 18, 0.8); 
+  border: 1px solid var(--primary-green); 
+  padding: 2rem 3rem; 
+  border-radius: 4px;
+  min-width: 250px;
 }
 
 .stat-number { 
-  font-family: 'Outfit', sans-serif; 
-  font-size: 48px; 
+  font-family: 'Syncopate', sans-serif; 
+  font-size: 40px; 
   color: var(--white); 
-  font-weight: 800; 
-  line-height: 1;
 }
 
 .stat-label { 
-  color: var(--steel); 
-  font-size: 13px; 
-  font-weight: 700;
-  margin-top: 5px; 
+  color: var(--primary-green); 
+  font-size: 12px; 
+  font-weight: 800;
   text-transform: uppercase; 
+  letter-spacing: 1px;
 }
 
 /* ==========================================================================
    5. FOOTER
    ========================================================================== */
 footer {
-  background: #111111; 
+  background: var(--black); 
   color: var(--steel); 
   padding: 5rem 3rem; 
   text-align: center;
   margin-top: auto; 
-  border-top: 5px solid var(--medium-gray);
+  border-top: 4px solid var(--primary-green);
 }
 
 footer strong { color: var(--white); text-transform: uppercase; }
 
 /* ==========================================================================
-   6. RESPONSIVE (MOBILE OPTIMIZATION)
+   6. RESPONSIVE (MOBILE)
    ========================================================================== */
 @media (max-width: 900px) {
-  nav {
-    padding: 0 1.5rem;
-    height: 70px;
-  }
-
-  .nav-links {
-    display: none; 
-  }
-
-  .hero {
-    padding: 4rem 1.5rem;
-    min-height: auto;
-  }
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem;
-  }
-
-  .hero-title {
-    font-size: 42px;
-    line-height: 1.1;
-  }
-
-  .hero-sub {
-    border-left: none;
-    border-top: 3px solid var(--red);
-    padding-left: 0;
-    padding-top: 15px;
-    margin: 0 auto 2rem auto;
-    font-size: 16px;
-  }
-
-  .hero-stats {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .nav-logo {
-    font-size: 22px;
-  }
+  nav { padding: 0 1.5rem; height: 80px; }
+  .nav-links { display: none; }
+  .nav-logo { font-size: 13px; }
+  .hero-title { font-size: 32px; }
+  .stat-card { width: 100%; min-width: unset; }
 }
