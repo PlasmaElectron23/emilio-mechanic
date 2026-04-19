@@ -1,6 +1,7 @@
 /* ==========================================================================
-   1. RESET & ROBUST VARIABLES
+   Reset and Robust Variables
    ========================================================================== */
+
 *, *::before, *::after { 
   box-sizing: border-box; 
   margin: 0; 
@@ -34,8 +35,9 @@ body {
 }
 
 /* ==========================================================================
-   2. NAVIGATION (Dark Mode)
+   Navigation
    ========================================================================== */
+
 nav {
   position: sticky; 
   top: 0; 
@@ -95,8 +97,9 @@ nav {
 }
 
 /* ==========================================================================
-   3. HERO SECTION
+   Hero Section
    ========================================================================== */
+
 .hero {
   position: relative; 
   min-height: 750px;
@@ -153,8 +156,9 @@ nav {
 }
 
 /* ==========================================================================
-   4. STATS CARDS
+   Stats Cards
    ========================================================================== */
+
 .hero-stats { 
   display: flex; 
   justify-content: center;
@@ -186,8 +190,9 @@ nav {
 }
 
 /* ==========================================================================
-   5. NEW SECTIONS: SERVICES & CONTACT
+   New Sections: Services and Contact
    ========================================================================== */
+
 .section-padding {
   padding: 100px 3rem;
   background: var(--black);
@@ -203,7 +208,10 @@ nav {
 
 .section-title span { color: var(--primary-green); }
 
-/* Services Grid */
+/* ==========================================================================
+   Services Section
+   ========================================================================== */
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -277,22 +285,9 @@ nav {
 }
 
 /* ==========================================================================
-   6. FOOTER
+   Mobile Display
    ========================================================================== */
-footer {
-  background: var(--black); 
-  color: var(--steel); 
-  padding: 6rem 3rem; 
-  text-align: center;
-  margin-top: auto; 
-  border-top: 4px solid var(--primary-green);
-}
 
-footer strong { color: var(--white); text-transform: uppercase; font-family: 'Syncopate', sans-serif; font-size: 14px; }
-
-/* ==========================================================================
-   7. RESPONSIVE (MOBILE OPTIMIZATION)
-   ========================================================================== */
 @media (max-width: 900px) {
   nav { padding: 0 1.5rem; height: 85px; }
   
@@ -310,3 +305,36 @@ footer strong { color: var(--white); text-transform: uppercase; font-family: 'Sy
   
   .service-card { padding: 3rem 1.5rem; }
 }
+
+/* ==========================================================================
+   Style for Service Card Images
+   ========================================================================== */
+
+.service-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Keeps the images from getting stretched */
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.service-card:hover img {
+  opacity: 1; /* Brightens the image when you hover over the card */
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  background: var(--black); 
+  color: var(--steel); 
+  padding: 6rem 3rem; 
+  text-align: center;
+  margin-top: auto; 
+  border-top: 4px solid var(--primary-green);
+}
+
+footer strong { color: var(--white); text-transform: uppercase; font-family: 'Syncopate', sans-serif; font-size: 14px; }
